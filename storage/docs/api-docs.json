@@ -1,0 +1,324 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Ciclos de Estudo",
+        "description": "Gerenciar os Estudos Online, usando a tecnica em ciclos",
+        "contact": {
+            "name": "Robert Ferraz",
+            "url": "https://plus.google.com/+RobertFerrazSousa"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/work": {
+            "get": {
+                "tags": [
+                    "Atividades"
+                ],
+                "summary": "Retorna uma lista de atividades.",
+                "description": "Retorna uma lista de atividades.",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "description": "Id da Atividade",
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "description": "Nome da Atividade",
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "description": "Tempo da Atividade",
+                                    "type": "integer"
+                                },
+                                "obs": {
+                                    "description": "Observa\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "create_at": {
+                                    "description": "Data de Cria\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "uodate_at": {
+                                    "description": "Data de Atualiza\u00e7\u00e3o",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Atividades"
+                ],
+                "summary": "Salva uma nova Atividade.",
+                "description": "Salva uma nova Atividade.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Nome da Atividade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "time",
+                        "in": "formData",
+                        "description": "Tempo da Atividade",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "obs",
+                        "in": "formData",
+                        "description": "Observa\u00e7\u00f5es",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "description": "Id da Atividade",
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "description": "Nome da Atividade",
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "description": "Tempo da Atividade",
+                                    "type": "integer"
+                                },
+                                "obs": {
+                                    "description": "Observa\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "create_at": {
+                                    "description": "Data de Cria\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "uodate_at": {
+                                    "description": "Data de Atualiza\u00e7\u00e3o",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/work/{id}": {
+            "get": {
+                "tags": [
+                    "Atividades"
+                ],
+                "summary": "Mostra uma Atividade",
+                "description": "Mostra uma Atividade.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da Atividade",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "description": "Id da Atividade",
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "description": "Nome da Atividade",
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "description": "Tempo da Atividade",
+                                    "type": "integer"
+                                },
+                                "obs": {
+                                    "description": "Observa\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "create_at": {
+                                    "description": "Data de Cria\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "uodate_at": {
+                                    "description": "Data de Atualiza\u00e7\u00e3o",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Atividades"
+                ],
+                "summary": "Atualiza uma Atividade.",
+                "description": "Atualiza uma Atividade.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da Atividade",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Nome da Atividade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "time",
+                        "in": "formData",
+                        "description": "Tempo da Atividade",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "obs",
+                        "in": "formData",
+                        "description": "Observa\u00e7\u00f5es",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "id": {
+                                    "description": "Id da Atividade",
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "description": "Nome da Atividade",
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "description": "Tempo da Atividade",
+                                    "type": "integer"
+                                },
+                                "obs": {
+                                    "description": "Observa\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "create_at": {
+                                    "description": "Data de Cria\u00e7\u00e3o",
+                                    "type": "string"
+                                },
+                                "uodate_at": {
+                                    "description": "Data de Atualiza\u00e7\u00e3o",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Atividades"
+                ],
+                "summary": "Remove uma Atividade.",
+                "description": "Remove uma Atividade.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id da Atividade",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "work",
+            "description": "Tudo sobre as Atividades"
+        }
+    ]
+}
