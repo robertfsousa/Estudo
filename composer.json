@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-        "laravel/passport": "^1.0"
+        "laravel/passport": "^1.0",
+        "jlapp/swaggervel": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -15,8 +16,8 @@
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
-        "laracasts/generators": "^1.1",
-        "jlapp/swaggervel": "dev-master"
+        "laracasts/generators": "^1.1"
+
     },
     "autoload": {
         "classmap": [
